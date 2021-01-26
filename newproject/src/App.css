@@ -15,8 +15,18 @@
   background-color: #17a2b8;
   border-color: #17a2b8;
   font-family: Comic Sans MS, Comic Sans, cursive	;
-
+  display: inline-block;
+  cursor: pointer;
 }
+.btn-change-name:active{
+  color: #fff;
+  background-color:#ccc;
+  border-color: #17a2b8;
+  font-family: Comic Sans MS, Comic Sans, cursive	;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .title{
   font-family: Jazz LET, fantasy	;
 }
