@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import ReactDOM from 'react';
 import './App.css';
 import Person from './Person/Person'; 
+import {Button} from '@material-ui/core';
+import Checkbox from '@material-ui/core/Checkbox';
+
+
 
 
 const App = props =>{
@@ -26,7 +30,9 @@ const nameChangeHandler = (event)=>{
     {name:event.target.value, age:"20"},
     {name:"Inbar", age:"17"}
   ]})
+  
 }
+
 
       return(
       <div className="App">
@@ -46,6 +52,9 @@ const nameChangeHandler = (event)=>{
           name={personsState.persons[2].name}
           age={personsState.persons[2].age}
           >My Hobbis: BasketBall</Person>
+         
+      
+
 
       </div>
     )
