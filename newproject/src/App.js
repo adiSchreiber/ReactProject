@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import ReactDOM from 'react';
 import './App.css';
 import Person from './Person/Person'; 
-import {Button} from '@material-ui/core';
-import Checkbox from '@material-ui/core/Checkbox';
 
 
 
@@ -32,13 +30,22 @@ const nameChangeHandler = (event)=>{
   ]})
   
 }
+const buttonStyle ={
+  backgroundColor:"white",
+  font:'inherit',
+  border: '1px solid blue',
+  padding: '8px',
+  cursor:'pointer'
+};
 
 
       return(
       <div className="App">
         <h1 className="title">Hi, I'm a React App</h1>
         <p>This is realy working!!</p>
-        <button className="btn-change-name" id="2" onClick={()=>switchNameHandler("Yeal")}> Switch Name</button>
+        <button
+        style={buttonStyle}
+         onClick={()=>switchNameHandler("Yeal")}> Switch Name</button>
         <Person 
           name={personsState.persons[0].name}
            age={personsState.persons[0].age}
