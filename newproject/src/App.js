@@ -52,7 +52,7 @@ render(){
         <p>This is realy working!!</p>
         <button
         style={this.buttonStyle}
-         onClick={this.togglePersonsHandler}> Switch Name</button>
+         onClick={this.togglePersonsHandler}>Toggle Persons</button>
           {this.state.showPersons?<div>
           <Person 
           name={this.state.persons[0].name}
