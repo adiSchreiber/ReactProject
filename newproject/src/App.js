@@ -14,7 +14,7 @@ const App = props =>{
       {name:"Inbar", age:"17"}
     ]})
     console.log(personsState);
-
+const showPersons = false;
 const switchNameHandler=(newname)=>{ 
   setPersons({ persons:[
     {name:"Omer", age:"12"},
@@ -45,7 +45,8 @@ const buttonStyle ={
         <p>This is realy working!!</p>
         <button
         style={buttonStyle}
-         onClick={()=>switchNameHandler("Yeal")}> Switch Name</button>
+         onClick={()=>switchNameHandler("Yeal"),console.log("the button was clicked")}> Switch Name</button>
+        {showPersons? <div>
         <Person 
           name={personsState.persons[0].name}
            age={personsState.persons[0].age}
@@ -61,6 +62,8 @@ const buttonStyle ={
           >My Hobbis: BasketBall</Person>
          
       
+        </div> : null}
+       
 
 
       </div>
