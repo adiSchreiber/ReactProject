@@ -2,7 +2,8 @@ import React, {Component, useState} from 'react';
 import ReactDOM from 'react';
 import './App.css';
 import Person from './Person/Person'; 
-
+import Validation from './ValidationComponent/Validation'
+import Char from './Char/Char';
 class App extends Component{
 state={
      persons:[
@@ -11,9 +12,10 @@ state={
       {id:"0105",name:"Inbar", age:"17"}
     ],
     otherState:'some other value',
-    showPersons : false
+    showPersons : false,
+    userInput:""
   }
-  
+ 
  nameChangeHandler = (event, id)=>{
    const personIndex = this.state.persons.findIndex(p=>{
      return p.id === id;
@@ -45,7 +47,22 @@ togglePersonsHandler = () =>{
   const doesShow = this.state.showPersons;
   this.setState({showPersons:!doesShow});
 }
+inputChangeHandler= (event)=>{
+  this.setState({userInput:event.target.value});
+}
+deleteCharHandler =(index)=>{
+  const text = this.state.userInput.split('');
+  text.split(index,1);
+  const updateText = text.join('');
+  this.setState({userInput:updateText});
+}
 render(){
+  const charList = this.state.userInput.split('').map((ch, index)=>{
+    return <Char 
+    character = {ch} 
+    key={index}
+    clicked = {()=>this.deleteCharHandler(index)} />;
+  });
   let persons = null;
   if(this.state.showPersons){
 persons=(
@@ -69,6 +86,14 @@ persons=(
         style={this.buttonStyle}
          onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
+        <hr></hr>
+        <input
+          type ="text" 
+          onChange={this.inputChangeHandler} 
+          value={this.state.userInput}/>
+          <p>{this.state.userInput.length}</p>
+          <Validation inputLength = {this.state.userInput.length}></Validation>
+          {charList}
       </div>
     );
 
