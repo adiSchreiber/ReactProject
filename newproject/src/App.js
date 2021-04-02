@@ -36,13 +36,7 @@ deletePersonHandler = (personIndex) =>{
   persons.splice(personIndex,1);
   this.setState({persons:persons})
 }
-  buttonStyle ={
-  backgroundColor:"white",
-  font:'inherit',
-  border: '1px solid blue',
-  padding: '8px',
-  cursor:'pointer'
-}
+
 togglePersonsHandler = () =>{
   const doesShow = this.state.showPersons;
   this.setState({showPersons:!doesShow});
@@ -57,6 +51,14 @@ deleteCharHandler =(index)=>{
   this.setState({userInput:updateText});
 }
 render(){
+ const buttonStyle ={
+    backgroundColor:"green",
+    color:"white",
+    font:'inherit',
+    border: '1px solid blue',
+    padding: '8px',
+    cursor:'pointer'
+ }
   const charList = this.state.userInput.split('').map((ch, index)=>{
     return <Char 
     character = {ch} 
@@ -77,13 +79,14 @@ persons=(
   })}
 </div>
 );
+buttonStyle.backgroundColor = "red";
   }
       return(
       <div className="App">
         <h1 className="title">Hi, I'm a React App</h1>
         <p>This is realy working!!</p>
         <button
-        style={this.buttonStyle}
+        style={buttonStyle}
          onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
         <hr></hr>
