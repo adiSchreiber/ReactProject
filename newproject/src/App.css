@@ -5,10 +5,17 @@
   padding: 20px;
   color: brown;
 }
+
 .App{
   text-align: center;
   color: blueviolet;
 
+}
+.red{
+  color: red;
+}
+.bold{
+  font-weight: bold;
 }
 .btn-change-name {
   color: #fff;
